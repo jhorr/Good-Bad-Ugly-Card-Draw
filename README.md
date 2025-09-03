@@ -25,16 +25,13 @@ position each week of the league. Bowling last is an advantage in "Good, Bad, or
 
 ## Features
 
-- **Random Card Drawing**:
-  - Draws unique cards for three separate games
-  - No card _value_ is repeated within a single game and no _card_ is repeated across all games
+- **Random Card Drawing**: Draws unique cards for three separate games
+- **Unique Values Per Game**: Ensures no duplicate card values within each game
 - **PDF Output**: Generates a PDF document for printing/displaying during the bowling match
-- **4x6 Grid Layout**: Organizes each game into two columns (Bad and Ugly)
+- **Grid Layout**: Organizes each game into two columns (Bad and Ugly)
 - **Color-Coded Suits**: 
   - Hearts (♥) and Diamonds (♦) displayed in **red**
   - Clubs (♣) and Spades (♠) displayed in **black**
-- **Unique Values Per Game**: Ensures no duplicate card values within each game
-- **Large Font Size**: 14pt font for easy reading and suit distinction
 
 ## Requirements
 
@@ -52,7 +49,7 @@ pip install reportlab
 
 ## Usage
 
-Simply run the script:
+Run the script:
 
 ```bash
 python draw-cards.py
@@ -87,11 +84,11 @@ The generated PDF includes:
 ## File Structure
 
 ```
-├── draw-cards.py          # Main script
+├── .gitignore            # Ingore generated PDF files
+├── draw-cards.py         # Main script
+├── LICENSE               # Governs use of this open source repo
 ├── README.md             # This file
 └── good_bad_ugly_cards.pdf  # Generated output (after running)
 ```
-
-## License
 
 This project is open source and available under the MIT License.
