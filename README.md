@@ -91,4 +91,6 @@ The generated PDF includes:
 └── good_bad_ugly_cards.pdf  # Generated output (after running)
 ```
 
+## License
+
 This project is open source and available under the MIT License.
