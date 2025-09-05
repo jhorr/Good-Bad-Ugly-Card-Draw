@@ -1,5 +1,5 @@
 import random
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import letter, landscape
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
@@ -39,8 +39,8 @@ def get_card_color(card):
         return colors.black
 
 def create_pdf_table(game_data, filename):
-    """Create a 4x6 PDF table with card data for each game"""
-    doc = SimpleDocTemplate(filename, pagesize=letter)
+    """Create a PDF table in landscape mode with card data for each game"""
+    doc = SimpleDocTemplate(filename, pagesize=landscape(letter))
     story = []
     
     # Create styles
@@ -121,7 +121,7 @@ def create_pdf_table(game_data, filename):
         ('TEXTCOLOR', (0, 0), (-1, 1), colors.black),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('FONTNAME', (0, 0), (-1, 1), 'Helvetica-Bold'),
-        ('FONTSIZE', (0, 0), (-1, 1), 12),
+        ('FONTSIZE', (0, 0), (-1, 1), 14),
         ('BOTTOMPADDING', (0, 0), (-1, 1), 12),
         
         # Grid lines
@@ -129,8 +129,10 @@ def create_pdf_table(game_data, filename):
         
         # Data row styling
         ('FONTNAME', (0, 2), (-1, -1), 'Helvetica'),
-        ('FONTSIZE', (0, 2), (-1, -1), 14),
+        ('FONTSIZE', (0, 2), (-1, -1), 20),
         ('ALIGN', (0, 2), (-1, -1), 'CENTER'),
+        ('TOPPADDING', (0, 2), (-1, -1), 5),
+        ('BOTTOMPADDING', (0, 2), (-1, -1), 15),
         ('ROWBACKGROUNDS', (0, 2), (-1, -1), [colors.white, colors.lightgrey]),
     ])
     
