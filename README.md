@@ -1,6 +1,6 @@
 # Good, Bad, or Ugly Card Draw
 
-This project is a Python script that generates a 4x6 PDF document for the "Good, Bad, or Ugly"
+This project is a Python script that generates a PDF document for the "Good, Bad, or Ugly"
 card game, featuring a grid layout with color-coded suits.
 
 ## What is "Good, Bad, or Ugly"?
