@@ -31,6 +31,17 @@ def draw_unique_value_cards(deck, num_cards, used_values=None):
     
     return selected_cards, selected_values
 
+def get_card_value_order(card):
+    """Return numeric order for card value (2=2, 3=3, ..., 10=10, J=11, Q=12, K=13)"""
+    value = card.split(' ')[0]
+    value_map = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 
+                 '10': 10, 'J': 11, 'Q': 12, 'K': 13}
+    return value_map.get(value, 0)
+
+def sort_cards_by_value(cards):
+    """Sort cards from lowest to highest value"""
+    return sorted(cards, key=get_card_value_order)
+
 def get_card_color(card):
     """Return red for hearts/diamonds, black for clubs/spades"""
     if '\u2665' in card or '\u2666' in card:  # Hearts or Diamonds
@@ -156,15 +167,21 @@ def main():
     # Draw cards for three games, ensuring unique values within each game
     # Game 1
     game1_bad, game1_bad_values = draw_unique_value_cards(deck, 4)
+    game1_bad = sort_cards_by_value(game1_bad)
     game1_ugly, game1_ugly_values = draw_unique_value_cards(deck, 3, game1_bad_values)
+    game1_ugly = sort_cards_by_value(game1_ugly)
     
     # Game 2
     game2_bad, game2_bad_values = draw_unique_value_cards(deck, 5)
+    game2_bad = sort_cards_by_value(game2_bad)
     game2_ugly, game2_ugly_values = draw_unique_value_cards(deck, 4, game2_bad_values)
+    game2_ugly = sort_cards_by_value(game2_ugly)
     
     # Game 3
     game3_bad, game3_bad_values = draw_unique_value_cards(deck, 4)
-    game3_ugly, game3_ugly_values = draw_unique_value_cards(deck, 6, game3_bad_values)
+    game3_bad = sort_cards_by_value(game3_bad)
+    game3_ugly, game3_ugly_values = draw_unique_value_cards(deck, 5, game3_bad_values)
+    game3_ugly = sort_cards_by_value(game3_ugly)
 
     # Organize game data
     game_data = {
