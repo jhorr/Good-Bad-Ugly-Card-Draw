@@ -32,6 +32,7 @@ position each week of the league. Bowling last is an advantage in "Good, Bad, or
 - **Color-Coded Suits**: 
   - Hearts (♥) and Diamonds (♦) displayed in **red**
   - Clubs (♣) and Spades (♠) displayed in **black**
+- **Sorted Columns**: Cards are displayed lowest to highest value in each column for quick card checks
 
 ## Requirements
 
