@@ -59,7 +59,7 @@ def create_pdf_table(game_data, filename):
     title_style = ParagraphStyle(
         'CustomTitle',
         parent=styles['Heading1'],
-        fontSize=16,
+        fontSize=24,
         spaceAfter=20,
         alignment=1  # Center alignment
     )
@@ -123,7 +123,7 @@ def create_pdf_table(game_data, filename):
         table_data.append(row_data)
     
     # Create table
-    table = Table(table_data, colWidths=[1.2*inch]*6)
+    table = Table(table_data, colWidths=[1.6*inch]*6)
     
     # Create table style
     table_style = TableStyle([
@@ -132,18 +132,18 @@ def create_pdf_table(game_data, filename):
         ('TEXTCOLOR', (0, 0), (-1, 1), colors.black),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('FONTNAME', (0, 0), (-1, 1), 'Helvetica-Bold'),
-        ('FONTSIZE', (0, 0), (-1, 1), 14),
-        ('BOTTOMPADDING', (0, 0), (-1, 1), 12),
+        ('FONTSIZE', (0, 0), (-1, 1), 20),
+        ('BOTTOMPADDING', (0, 0), (-1, 1), 15),
         
         # Grid lines
         ('GRID', (0, 0), (-1, -1), 1, colors.black),
         
         # Data row styling
         ('FONTNAME', (0, 2), (-1, -1), 'Helvetica'),
-        ('FONTSIZE', (0, 2), (-1, -1), 20),
+        ('FONTSIZE', (0, 2), (-1, -1), 24),
         ('ALIGN', (0, 2), (-1, -1), 'CENTER'),
         ('TOPPADDING', (0, 2), (-1, -1), 5),
-        ('BOTTOMPADDING', (0, 2), (-1, -1), 15),
+        ('BOTTOMPADDING', (0, 2), (-1, -1), 20),
         ('ROWBACKGROUNDS', (0, 2), (-1, -1), [colors.white, colors.lightgrey]),
     ])
     
