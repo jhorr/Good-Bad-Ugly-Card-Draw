@@ -19,6 +19,7 @@ The rules of this bowling poker game are:
 - If a player draws an "Ugly" card then all players discard their hands.
 - Cards must be drawn in player bowl order.
 - Draw cards one at a time and evaluate "Good, Bad, or Ugly" with each card in succession.
+- Aces are always "Good".
 
 Another good rule is to always mix up the bowling order so the same bowler isn't in the anchor
 position each week of the league. Bowling last is an advantage in "Good, Bad, or Ugly."
@@ -68,7 +69,7 @@ The script draws cards for three games with the following distribution:
 
 ## Card Rules
 
-- Each game uses a standard 52-card deck (2-K, no Aces)
+- Each game uses a 48-card deck (2-K, no Aces)
 - Within each game, no card value can appear twice (regardless of suit)
 - Cards are drawn randomly and uniquely for each category
 - The deck is shuffled before each run
